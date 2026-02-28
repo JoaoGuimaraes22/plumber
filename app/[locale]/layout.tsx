@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { i18n } from "../../i18n-config";
-import "../globals.css";
 
 const siteUrl = "https://plumber-site.vercel.app";
 
