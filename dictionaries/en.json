@@ -1,0 +1,23 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "areas": "Areas",
+    "reviews": "Reviews",
+    "contact": "Contact",
+    "cta": "24h Emergency"
+  },
+  "hero": {
+    "tagline": "24-Hour Plumber — Cascais & Lisbon Line",
+    "title": "AquaFix",
+    "subtitle": "Professional plumbing at your service. Drain unblocking, leak detection, pipe repair, and sanitary installations. On-site in 30 minutes.",
+    "ctaPrimary": "Call Now — Emergency",
+    "ctaSecondary": "Get a Free Quote",
+    "phone": "+351 910 123 456",
+    "badge1": "24/7 Service",
+    "badge2": "On-site in 30 min",
+    "badge3": "Free Estimates",
+    "badge4": "Certified Technicians"
+  }
+}

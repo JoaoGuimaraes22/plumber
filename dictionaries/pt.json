@@ -1,0 +1,23 @@
+{
+  "navbar": {
+    "home": "Início",
+    "about": "Sobre",
+    "services": "Serviços",
+    "areas": "Áreas",
+    "reviews": "Avaliações",
+    "contact": "Contacto",
+    "cta": "Emergência 24h"
+  },
+  "hero": {
+    "tagline": "Canalizador 24 Horas — Cascais e Linha",
+    "title": "AquaFix",
+    "subtitle": "Canalizador profissional ao seu serviço. Desentupimentos, deteção de fugas, reparação de canalizações e instalações sanitárias. Deslocação em 30 minutos.",
+    "ctaPrimary": "Ligar Agora — Emergência",
+    "ctaSecondary": "Pedir Orçamento Grátis",
+    "phone": "+351 910 123 456",
+    "badge1": "Serviço 24h/7dias",
+    "badge2": "Deslocação em 30 min",
+    "badge3": "Orçamento Grátis",
+    "badge4": "Técnicos Certificados"
+  }
+}
