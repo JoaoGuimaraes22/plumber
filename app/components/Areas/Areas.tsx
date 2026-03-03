@@ -91,11 +91,13 @@ export default function Areas({ dict }: Props) {
         </div>
 
         {/* Town grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5 mb-12 sm:mb-14">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-5 mb-12 sm:mb-14">
           {towns.map((t, i) => (
             <div
               key={i}
               className={`flex flex-col items-center gap-2 p-5 sm:p-6 rounded-2xl bg-navy-800 border border-navy-700/50 hover:border-blue-500/40 transition-colors text-center ${
+                i === towns.length - 1 ? "col-span-2 sm:col-span-1 sm:col-start-2" : ""
+              } ${
                 visible
                   ? "opacity-100 translate-y-0 transition-all duration-700 ease-out"
                   : "opacity-0 translate-y-6"

@@ -17,6 +17,10 @@ type ContactDict = {
   fieldName: string;
   fieldPhone: string;
   fieldMessage: string;
+  labelName: string;
+  labelPhone: string;
+  labelMessage: string;
+  submitGreeting: string;
   submitBtn: string;
   submitNote: string;
 };
@@ -41,7 +45,7 @@ export default function Contact({ dict }: Props) {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    const text = `Olá! Sou ${name}. ${message}${phone ? ` Contacto: ${phone}.` : ""}`;
+    const text = `${dict.submitGreeting} ${name}. ${message}${phone ? ` Tel: ${phone}.` : ""}`;
     window.open(`https://wa.me/351910123456?text=${encodeURIComponent(text)}`, "_blank");
   }
 
@@ -140,29 +144,47 @@ export default function Contact({ dict }: Props) {
               {dict.formTitle}
             </h3>
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-              <input
-                type="text"
-                required
-                placeholder={dict.fieldName}
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl bg-navy-900 border border-navy-700 text-white placeholder-navy-400 text-sm focus:outline-none focus:border-blue-500 transition-colors"
-              />
-              <input
-                type="tel"
-                placeholder={dict.fieldPhone}
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl bg-navy-900 border border-navy-700 text-white placeholder-navy-400 text-sm focus:outline-none focus:border-blue-500 transition-colors"
-              />
-              <textarea
-                required
-                rows={4}
-                placeholder={dict.fieldMessage}
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl bg-navy-900 border border-navy-700 text-white placeholder-navy-400 text-sm focus:outline-none focus:border-blue-500 transition-colors resize-none"
-              />
+              <div className="flex flex-col gap-1.5">
+                <label htmlFor="contact-name" className="text-navy-300 text-xs font-medium">
+                  {dict.labelName} <span className="text-red-400">*</span>
+                </label>
+                <input
+                  id="contact-name"
+                  type="text"
+                  required
+                  placeholder={dict.fieldName}
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="w-full px-4 py-3 rounded-xl bg-navy-900 border border-navy-700 text-white placeholder-navy-400 text-sm focus:outline-none focus:border-blue-500 transition-colors"
+                />
+              </div>
+              <div className="flex flex-col gap-1.5">
+                <label htmlFor="contact-phone" className="text-navy-300 text-xs font-medium">
+                  {dict.labelPhone} <span className="text-navy-500 font-normal">({dict.fieldPhone})</span>
+                </label>
+                <input
+                  id="contact-phone"
+                  type="tel"
+                  placeholder="+351 910 000 000"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  className="w-full px-4 py-3 rounded-xl bg-navy-900 border border-navy-700 text-white placeholder-navy-400 text-sm focus:outline-none focus:border-blue-500 transition-colors"
+                />
+              </div>
+              <div className="flex flex-col gap-1.5">
+                <label htmlFor="contact-message" className="text-navy-300 text-xs font-medium">
+                  {dict.labelMessage} <span className="text-red-400">*</span>
+                </label>
+                <textarea
+                  id="contact-message"
+                  required
+                  rows={4}
+                  placeholder={dict.fieldMessage}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  className="w-full px-4 py-3 rounded-xl bg-navy-900 border border-navy-700 text-white placeholder-navy-400 text-sm focus:outline-none focus:border-blue-500 transition-colors resize-none"
+                />
+              </div>
               <button
                 type="submit"
                 className="w-full py-3.5 rounded-xl bg-green-600 hover:bg-green-500 text-white font-semibold text-sm transition-colors flex items-center justify-center gap-2"

@@ -12,6 +12,7 @@ export default function CallBar({ dict }: Props) {
     <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden flex border-t border-navy-700/80 bg-navy-950/95 backdrop-blur-sm">
       <a
         href="tel:+351910123456"
+        aria-label={dict.call}
         className="flex-1 flex items-center justify-center gap-2 py-4 text-white font-semibold text-sm bg-blue-600 hover:bg-blue-500 transition-colors"
       >
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
@@ -23,6 +24,7 @@ export default function CallBar({ dict }: Props) {
         href="https://wa.me/351910123456"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label={dict.whatsapp}
         className="flex-1 flex items-center justify-center gap-2 py-4 text-white font-semibold text-sm bg-green-600 hover:bg-green-500 transition-colors"
       >
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">

@@ -66,6 +66,7 @@ export default function FAQ({ dict }: Props) {
             <div key={i}>
               <button
                 className="w-full flex items-center justify-between gap-4 py-5 text-left group"
+                aria-expanded={open === i}
                 onClick={() => setOpen(open === i ? null : i)}
               >
                 <span

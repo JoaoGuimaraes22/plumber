@@ -74,6 +74,10 @@
     "fieldName": "O seu nome *",
     "fieldPhone": "Telefone (opcional)",
     "fieldMessage": "Descreva o problema *",
+    "labelName": "Nome",
+    "labelPhone": "Telefone",
+    "labelMessage": "Mensagem",
+    "submitGreeting": "Olá! Sou",
     "submitBtn": "Enviar via WhatsApp",
     "submitNote": "Ao submeter, abre o WhatsApp com a sua mensagem pré-preenchida."
   },
