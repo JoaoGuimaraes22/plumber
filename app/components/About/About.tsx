@@ -127,7 +127,7 @@ export default function About({ dict }: Props) {
       className="relative bg-navy-900 py-20 sm:py-28 px-5 sm:px-6 overflow-hidden"
     >
       {/* Subtle top border accent */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-blue-500/30 to-transparent" />
 
       <div className="mx-auto max-w-6xl">
         {/* Section header */}
