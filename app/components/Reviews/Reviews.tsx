@@ -44,6 +44,7 @@ function Stars() {
 export default function Reviews({ dict }: Props) {
   const sectionRef = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
+  const [settled, setSettled] = useState(false);
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -60,6 +61,12 @@ export default function Reviews({ dict }: Props) {
     obs.observe(el);
     return () => obs.disconnect();
   }, []);
+
+  useEffect(() => {
+    if (!visible) return;
+    const t = setTimeout(() => setSettled(true), 1500);
+    return () => clearTimeout(t);
+  }, [visible]);
 
   const reviews = [
     { name: dict.r1Name, town: dict.r1Town, text: dict.r1Text, date: dict.r1Date },
@@ -89,8 +96,7 @@ export default function Reviews({ dict }: Props) {
             {dict.label}
           </p>
           <h2
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4"
-            style={{ fontFamily: "'Oswald', sans-serif" }}
+            className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4"
           >
             {dict.title}
           </h2>
@@ -118,8 +124,7 @@ export default function Reviews({ dict }: Props) {
             <div className="hidden sm:block w-px h-6 bg-navy-700" />
             <div className="flex items-center gap-2">
               <span
-                className="text-3xl font-bold text-white leading-none"
-                style={{ fontFamily: "'Oswald', sans-serif" }}
+                className="font-display text-3xl font-bold text-white leading-none"
               >
                 {dict.ratingScore}
               </span>
@@ -135,12 +140,10 @@ export default function Reviews({ dict }: Props) {
           {reviews.map((r, i) => (
             <div
               key={i}
-              className={`flex flex-col gap-4 p-6 rounded-2xl bg-navy-800 border border-navy-700/50 hover:border-blue-500/30 transition-colors ${
-                visible
-                  ? "opacity-100 translate-y-0 transition-all duration-700 ease-out"
-                  : "opacity-0 translate-y-6"
+              className={`flex flex-col gap-4 p-6 rounded-2xl bg-navy-800 border border-navy-700/50 hover:border-blue-500/30 transition-card ${
+                visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
               }`}
-              style={{ transitionDelay: visible ? `${300 + i * 120}ms` : "0ms" }}
+              style={{ transitionDelay: settled ? "0ms" : visible ? `${300 + i * 120}ms` : "0ms" }}
             >
               {/* Quote icon */}
               <svg className="w-7 h-7 text-blue-500/40 shrink-0" fill="currentColor" viewBox="0 0 24 24">
@@ -169,7 +172,7 @@ export default function Reviews({ dict }: Props) {
         <div
           className={`flex flex-col sm:flex-row items-center justify-between gap-5 p-6 sm:p-8 rounded-2xl bg-navy-800/50 border border-navy-700/50 ${
             visible
-              ? "opacity-100 translate-y-0 transition-all duration-700 ease-out delay-700"
+              ? "opacity-100 translate-y-0 transition-all duration-700 ease-out delay-300"
               : "opacity-0 translate-y-6"
           }`}
         >

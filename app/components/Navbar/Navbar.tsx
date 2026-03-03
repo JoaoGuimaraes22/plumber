@@ -60,8 +60,7 @@ export default function Navbar({ dict, locale }: Props) {
         {/* Logo */}
         <a
           href={`/${locale}`}
-          className="text-xl sm:text-2xl font-bold text-white tracking-tight"
-          style={{ fontFamily: "'Oswald', sans-serif" }}
+          className="font-display text-xl sm:text-2xl font-bold text-white tracking-tight"
         >
           AQUA<span className="text-blue-500">FIX</span>
         </a>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type FAQDict = {
   label: string;
@@ -25,7 +25,25 @@ type Props = {
 };
 
 export default function FAQ({ dict }: Props) {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [visible, setVisible] = useState(false);
   const [open, setOpen] = useState<number | null>(null);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          obs.disconnect();
+        }
+      },
+      { threshold: 0.1 },
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
 
   const items = [
     { q: dict.q1, a: dict.a1 },
@@ -39,19 +57,23 @@ export default function FAQ({ dict }: Props) {
   return (
     <section
       id="faq"
+      ref={sectionRef}
       className="relative bg-navy-900 py-20 sm:py-28 px-5 sm:px-6 overflow-hidden"
     >
       <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-blue-500/30 to-transparent" />
 
       <div className="mx-auto max-w-3xl">
         {/* Header */}
-        <div className="text-center mb-12 sm:mb-14">
+        <div
+          className={`text-center mb-12 sm:mb-14 transition-all duration-700 ease-out ${
+            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          }`}
+        >
           <p className="text-blue-400 uppercase tracking-[0.25em] text-xs sm:text-sm font-semibold mb-3">
             {dict.label}
           </p>
           <h2
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4"
-            style={{ fontFamily: "'Oswald', sans-serif" }}
+            className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4"
           >
             {dict.title}
           </h2>
@@ -61,7 +83,11 @@ export default function FAQ({ dict }: Props) {
         </div>
 
         {/* Accordion */}
-        <div className="flex flex-col divide-y divide-navy-700/50">
+        <div
+          className={`flex flex-col divide-y divide-navy-700/50 transition-all duration-700 ease-out delay-200 ${
+            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          }`}
+        >
           {items.map((item, i) => (
             <div key={i}>
               <button
@@ -70,8 +96,7 @@ export default function FAQ({ dict }: Props) {
                 onClick={() => setOpen(open === i ? null : i)}
               >
                 <span
-                  className="text-white font-semibold text-sm sm:text-base group-hover:text-blue-300 transition-colors"
-                  style={{ fontFamily: "'Oswald', sans-serif" }}
+                  className="font-display text-white font-semibold text-sm sm:text-base group-hover:text-blue-300 transition-colors"
                 >
                   {item.q}
                 </span>

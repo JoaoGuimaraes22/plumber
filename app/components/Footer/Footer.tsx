@@ -38,8 +38,7 @@ export default function Footer({ dict, locale }: Props) {
           {/* Brand column */}
           <div>
             <p
-              className="text-2xl font-bold text-white mb-2"
-              style={{ fontFamily: "'Oswald', sans-serif" }}
+              className="font-display text-2xl font-bold text-white mb-2"
             >
               AquaFix
             </p>

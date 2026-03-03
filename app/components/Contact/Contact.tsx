@@ -63,8 +63,7 @@ export default function Contact({ dict }: Props) {
             {dict.label}
           </p>
           <h2
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4"
-            style={{ fontFamily: "'Oswald', sans-serif" }}
+            className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4"
           >
             {dict.title}
           </h2>
@@ -89,8 +88,7 @@ export default function Contact({ dict }: Props) {
               <div>
                 <p className="text-navy-400 text-xs uppercase tracking-wider mb-0.5">{dict.phoneLabel}</p>
                 <p
-                  className="text-white font-bold text-xl group-hover:text-blue-300 transition-colors"
-                  style={{ fontFamily: "'Oswald', sans-serif" }}
+                  className="font-display text-white font-bold text-xl group-hover:text-blue-300 transition-colors"
                 >
                   {dict.phone}
                 </p>
@@ -110,8 +108,7 @@ export default function Contact({ dict }: Props) {
               <div>
                 <p className="text-navy-400 text-xs uppercase tracking-wider mb-0.5">{dict.whatsappLabel}</p>
                 <p
-                  className="text-white font-bold text-xl group-hover:text-green-400 transition-colors"
-                  style={{ fontFamily: "'Oswald', sans-serif" }}
+                  className="font-display text-white font-bold text-xl group-hover:text-green-400 transition-colors"
                 >
                   {dict.phone}
                 </p>
@@ -138,8 +135,7 @@ export default function Contact({ dict }: Props) {
           {/* Right: WhatsApp form */}
           <div className="p-6 sm:p-8 rounded-2xl bg-navy-800 border border-navy-700/50">
             <h3
-              className="text-white font-bold text-xl mb-6"
-              style={{ fontFamily: "'Oswald', sans-serif" }}
+              className="font-display text-white font-bold text-xl mb-6"
             >
               {dict.formTitle}
             </h3>

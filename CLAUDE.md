@@ -16,7 +16,7 @@ Professional plumber website template targeting **Cascais & Linha de Cascais**, 
 - **Styling:** Tailwind CSS v4 (via @tailwindcss/postcss)
 - **Hosting:** Vercel
 - **Fonts:** Inter (body) + Oswald (headings/brand) via Google Fonts CDN
-- **CONTEXT:** alway
+- **CONTEXT:** always use context 7
 
 ## Color System
 

@@ -61,6 +61,7 @@ function AnimatedNumber({ value, active }: { value: string; active: boolean }) {
 export default function About({ dict }: Props) {
   const sectionRef = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
+  const [settled, setSettled] = useState(false);
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -77,6 +78,12 @@ export default function About({ dict }: Props) {
     obs.observe(el);
     return () => obs.disconnect();
   }, []);
+
+  useEffect(() => {
+    if (!visible) return;
+    const t = setTimeout(() => setSettled(true), 1500);
+    return () => clearTimeout(t);
+  }, [visible]);
 
   const stats = [
     { value: dict.stat1Value, label: dict.stat1Label },
@@ -142,8 +149,7 @@ export default function About({ dict }: Props) {
             {dict.label}
           </p>
           <h2
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-white"
-            style={{ fontFamily: "'Oswald', sans-serif" }}
+            className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white"
           >
             {dict.title}
           </h2>
@@ -163,8 +169,7 @@ export default function About({ dict }: Props) {
               className="text-center p-5 sm:p-6 rounded-2xl bg-navy-800/50 border border-navy-700/50"
             >
               <p
-                className="text-3xl sm:text-4xl font-bold text-blue-400 mb-1"
-                style={{ fontFamily: "'Oswald', sans-serif" }}
+                className="font-display text-3xl sm:text-4xl font-bold text-blue-400 mb-1"
               >
                 <AnimatedNumber value={stat.value} active={visible} />
               </p>
@@ -196,13 +201,11 @@ export default function About({ dict }: Props) {
             {highlights.map((h, i) => (
               <div
                 key={i}
-                className={`flex gap-4 p-5 rounded-xl bg-navy-800/40 border border-navy-700/40 hover:border-blue-500/30 transition-colors ${
-                  visible
-                    ? `opacity-100 translate-y-0 transition-all duration-700 ease-out`
-                    : "opacity-0 translate-y-6"
+                className={`flex gap-4 p-5 rounded-xl bg-navy-800/40 border border-navy-700/40 hover:border-blue-500/30 transition-card ${
+                  visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
                 }`}
                 style={{
-                  transitionDelay: visible ? `${400 + i * 150}ms` : "0ms",
+                  transitionDelay: settled ? "0ms" : visible ? `${400 + i * 150}ms` : "0ms",
                 }}
               >
                 <div className="shrink-0 w-11 h-11 rounded-lg bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-blue-400">

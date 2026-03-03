@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { getDictionary } from "../../get-dictionary";
 import type { Locale } from "../../i18n-config";
 import Navbar from "../components/Navbar/Navbar";
@@ -29,19 +30,19 @@ export default async function Home({ params }: Props) {
           id="hero"
           className="relative flex min-h-screen flex-col items-center justify-center text-white text-center px-5 sm:px-6 overflow-hidden"
         >
-          {/* Gradient background until real hero image is added */}
-          <div className="absolute inset-0 bg-linear-to-br from-navy-950 via-navy-900 to-navy-800" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(37,99,235,0.15),transparent_70%)]" />
-
-          {/* Subtle grid pattern overlay */}
-          <div
-            className="absolute inset-0 opacity-[0.03]"
-            style={{
-              backgroundImage:
-                "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
-              backgroundSize: "60px 60px",
-            }}
+          {/* Hero image */}
+          <Image
+            src="/hero-img.jpg"
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="100vw"
+            alt="Canalizador profissional AquaFix"
           />
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-navy-950/70" />
+          {/* Blue radial glow */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(37,99,235,0.15),transparent_70%)]" />
 
           <HeroContent dict={dict.hero} locale={locale} />
         </section>

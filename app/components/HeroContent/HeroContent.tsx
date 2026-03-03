@@ -43,8 +43,7 @@ export default function HeroContent({ dict, locale }: Props) {
 
       {/* Title */}
       <h1
-        className={`text-5xl sm:text-7xl md:text-8xl font-bold text-white leading-tight transition-all duration-700 ease-out ${show(2)}`}
-        style={{ fontFamily: "'Oswald', sans-serif" }}
+        className={`font-display text-5xl sm:text-7xl md:text-8xl font-bold text-white leading-tight transition-all duration-700 ease-out ${show(2)}`}
       >
         {dict.title}
       </h1>
@@ -59,8 +58,7 @@ export default function HeroContent({ dict, locale }: Props) {
       {/* Phone number — large and prominent */}
       <a
         href={`tel:${dict.phone.replace(/\s/g, "")}`}
-        className={`mt-6 sm:mt-8 text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-wide hover:text-blue-400 transition-all duration-700 ease-out ${show(4)}`}
-        style={{ fontFamily: "'Oswald', sans-serif" }}
+        className={`font-display mt-6 sm:mt-8 text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-wide hover:text-blue-400 transition-all duration-700 ease-out ${show(4)}`}
       >
         {dict.phone}
       </a>
