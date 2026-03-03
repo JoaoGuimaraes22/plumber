@@ -19,5 +19,25 @@
     "badge2": "Deslocação em 30 min",
     "badge3": "Orçamento Grátis",
     "badge4": "Técnicos Certificados"
+  },
+  "about": {
+    "label": "Sobre Nós",
+    "title": "Canalizadores de Confiança em Cascais",
+    "description": "A AquaFix nasceu da necessidade de oferecer um serviço de canalização verdadeiramente profissional na Linha de Cascais. Com mais de 15 anos de experiência, a nossa equipa de técnicos certificados resolve qualquer problema — desde uma simples torneira que pinga até roturas de emergência em plena madrugada.",
+    "paragraph2": "Sabemos que um problema de canalização não espera. Por isso, garantimos deslocação rápida, diagnóstico transparente e orçamento sem surpresas. Trabalhamos com as melhores marcas do mercado e utilizamos equipamentos de última geração, incluindo câmaras de inspeção e detetores de fugas por ultrassons.",
+    "stat1Value": "15+",
+    "stat1Label": "Anos de Experiência",
+    "stat2Value": "4200+",
+    "stat2Label": "Serviços Realizados",
+    "stat3Value": "30",
+    "stat3Label": "Min. Tempo de Resposta",
+    "stat4Value": "4.9",
+    "stat4Label": "Avaliação Google",
+    "highlight1Title": "Licenciados e Segurados",
+    "highlight1Text": "Técnicos com alvará profissional e seguro de responsabilidade civil. Trabalho garantido.",
+    "highlight2Title": "Preços Transparentes",
+    "highlight2Text": "Orçamento detalhado antes de qualquer intervenção. Sem custos ocultos, sem surpresas na fatura.",
+    "highlight3Title": "Disponíveis 24/7",
+    "highlight3Text": "Emergências não têm horário. A nossa equipa está de piquete todos os dias, incluindo feriados e fins de semana."
   }
 }

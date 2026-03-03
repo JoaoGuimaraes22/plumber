@@ -87,7 +87,7 @@ export default function Navbar({ dict, locale }: Props) {
             href={`/${locale}#contact`}
             className="hidden md:flex items-center gap-2 relative rounded-full bg-blue-600 px-5 py-2.5 text-xs font-semibold text-white uppercase tracking-wide hover:bg-blue-500 hover:scale-105 active:scale-95 transition-all duration-200"
           >
-            <span className="absolute inset-0 rounded-full bg-blue-400 animate-ping opacity-15" />
+            <span className="absolute inset-0 rounded-full bg-blue-400 opacity-0 animate-[ping_1s_ease-out_0.5s_2]" />
             <svg
               className="w-4 h-4 relative"
               fill="none"

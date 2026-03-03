@@ -19,5 +19,25 @@
     "badge2": "On-site in 30 min",
     "badge3": "Free Estimates",
     "badge4": "Certified Technicians"
+  },
+  "about": {
+    "label": "About Us",
+    "title": "Trusted Plumbers in Cascais",
+    "description": "AquaFix was founded to bring truly professional plumbing services to the Cascais coastline. With over 15 years of experience, our team of certified technicians handles everything — from a simple dripping tap to emergency pipe bursts in the middle of the night.",
+    "paragraph2": "We know plumbing problems don't wait. That's why we guarantee fast response times, transparent diagnostics, and no-surprise quotes. We work with top-tier brands and use the latest equipment, including inspection cameras and ultrasonic leak detectors.",
+    "stat1Value": "15+",
+    "stat1Label": "Years of Experience",
+    "stat2Value": "4200+",
+    "stat2Label": "Jobs Completed",
+    "stat3Value": "30",
+    "stat3Label": "Min. Response Time",
+    "stat4Value": "4.9",
+    "stat4Label": "Google Rating",
+    "highlight1Title": "Licensed & Insured",
+    "highlight1Text": "Certified technicians with professional credentials and full liability insurance. All work guaranteed.",
+    "highlight2Title": "Transparent Pricing",
+    "highlight2Text": "Detailed quote before any work begins. No hidden fees, no invoice surprises.",
+    "highlight3Title": "Available 24/7",
+    "highlight3Text": "Emergencies don't keep office hours. Our team is on call every day, including holidays and weekends."
   }
 }

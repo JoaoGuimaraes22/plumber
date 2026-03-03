@@ -74,7 +74,7 @@ export default function HeroContent({ dict, locale }: Props) {
           href={`tel:${dict.phone.replace(/\s/g, "")}`}
           className="relative rounded-full bg-blue-600 px-8 py-3.5 text-sm font-semibold text-white uppercase tracking-wide hover:bg-blue-500 hover:scale-105 active:scale-95 transition-all duration-200 min-w-[240px] text-center flex items-center justify-center gap-2"
         >
-          <span className="absolute inset-0 rounded-full bg-blue-400 animate-ping opacity-15" />
+          <span className="absolute inset-0 rounded-full bg-blue-400 opacity-0 animate-[ping_1s_ease-out_1.5s_2]" />
           <svg
             className="w-5 h-5 relative"
             fill="none"

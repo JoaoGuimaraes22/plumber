@@ -1,8 +1,8 @@
-import Image from "next/image";
 import { getDictionary } from "../../get-dictionary";
 import type { Locale } from "../../i18n-config";
 import Navbar from "../components/Navbar/Navbar";
 import HeroContent from "../components/HeroContent/HeroContent";
+import About from "../components/About/About";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -37,6 +37,9 @@ export default async function Home({ params }: Props) {
 
         <HeroContent dict={dict.hero} locale={locale} />
       </section>
+
+      {/* About Section */}
+      <About dict={dict.about} />
     </main>
   );
 }
